@@ -36,8 +36,8 @@ multiqc -o outputs/fastqc_clean outputs/fastqc_clean
 #Mapping, QC and quantification
 for i in outputs/*1_val_1.fq.gz
 do
-    base=$(basename $i _1_val_1.fq.gz)
-    hisat2 -p ${threads} --dta -x refs/mm10 -1 outputs/${base}_1_val_1.fq.gz -2 outputs/${base}_2_val_2.fq.gz -S outputs/${base}.sam
+  base=$(basename $i _1_val_1.fq.gz)
+  hisat2 -p ${threads} --dta -x refs/mm10 -1 outputs/${base}_1_val_1.fq.gz -2 outputs/${base}_2_val_2.fq.gz -S outputs/${base}.sam
 done
 
 for i in outputs/*.sam
